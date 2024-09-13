@@ -37,6 +37,19 @@ function createPokemonCard (pokemon){
     const pokemonName = pokemon.name.charAt(0).toUpperCase()+ pokemon.name.slice(1);
     console.log(pokemonName)
 
+    //Car pokemon 
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const img = document.createElement('img')
+    img.src = imageUrl1;
+    img.alt = pokemonName;
+    img.alt = pokemonName;
+
+    const cardContent = document.createElement('div')
+    cardContent.classList.add('card-content');
+    const title = document.createElement('h2');
+    title.textContent = pokemonName;
 }
 
 fetchPokemons();
