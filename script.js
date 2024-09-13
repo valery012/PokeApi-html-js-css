@@ -1,6 +1,6 @@
 /* Dec */
 
-const galeria =document.getElementById('galeria')
+const galeria =document.getElementById('Galeria')
 const modal = document.getElementById('pokemonModal')
 const modalContent = document.getElementById('pokemon-detail')
 const closeModal = document.querySelector('.close')
@@ -10,7 +10,7 @@ const serachButton = document.getElementById('search-botton')
 //ASYNC - AWAIT 
 
 async function fetchPokemons(){
-    for(let id = 1; id<= 30;id++){
+    for(let id = 1; id<=3;id++){
         await fetchPokemonsByIdOrName(id);
 
     }
@@ -43,13 +43,19 @@ function createPokemonCard (pokemon){
 
     const img = document.createElement('img')
     img.src = imageUrl1;
-    img.alt = pokemonName;
-    img.alt = pokemonName;
+    img.alt = pokemonName
 
     const cardContent = document.createElement('div')
     cardContent.classList.add('card-content');
+
     const title = document.createElement('h2');
     title.textContent = pokemonName;
+
+    cardContent.appendChild(title)
+    card.appendChild(img)
+    card.appendChild(cardContent)
+console.log(card)
+    galeria.appendChild(card)
 }
 
 fetchPokemons();
